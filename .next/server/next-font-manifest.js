@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/jordandavidson/Documents/practice/world-cup-tracker/app/layout":["static/media/e4af272ccee01ff0-s.p.woff2","static/media/bd9b9909c3a641ff-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

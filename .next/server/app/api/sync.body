@@ -1,0 +1,1 @@
+{"ok":false,"error":"Failed to reach football-data.org: Dynamic server usage: no-store fetch https://api.football-data.org/v4/competitions/WC/matches /api/sync","results":[],"unmatched":[],"source":"football-data.org","fetchedAt":"2026-06-12T20:21:43.002Z"}

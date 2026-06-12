@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import { TournamentProvider } from "../context/TournamentContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body className="bg-ink text-paper font-body antialiased min-h-screen">
+        <Analytics />
         <TournamentProvider>{children}</TournamentProvider>
       </body>
     </html>

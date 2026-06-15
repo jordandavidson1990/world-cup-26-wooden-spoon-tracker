@@ -77,8 +77,4 @@ export interface TeamStats {
   goalsAgainst: number;
   goalDifference: number;
   points: number;
-  yellowCards: number;
-  redCards: number;
-  /** FIFA-style disciplinary points: 1 per yellow, 4 per red. Higher = worse record. */
-  disciplinaryPoints: number;
 }

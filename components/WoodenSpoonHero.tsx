@@ -32,16 +32,15 @@ export function WoodenSpoonHero({
           No results logged yet
         </h1>
         <p className="mt-3 max-w-xl text-muted">
-          Enter scores and cards for the group-stage fixtures below to see
-          which of the 48 teams is currently sitting last — on points, goal
-          difference and disciplinary record.
+          Enter scores and cards for the group-stage fixtures below to see which
+          of the 48 teams is currently sitting last — on points and goal
+          difference.
         </p>
       </section>
     );
   }
 
-  const { team, points, goalDifference, played, disciplinaryPoints, yellowCards, redCards } =
-    worst;
+  const { team, points, goalDifference, played } = worst;
 
   return (
     <section className="relative overflow-hidden rounded-2xl border border-line bg-panel bg-scoreboard shadow-plate px-6 py-10 sm:px-10 sm:py-14">
@@ -55,7 +54,8 @@ export function WoodenSpoonHero({
       <div className="relative flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-spoonlight">
-            Wooden Spoon Watch · {playedCount}/{totalMatches} group matches played
+            Wooden Spoon Watch · {playedCount}/{totalMatches} group matches
+            played
           </p>
 
           <div className="mt-4 flex items-center gap-4">
@@ -73,9 +73,8 @@ export function WoodenSpoonHero({
           </div>
 
           <p className="mt-4 max-w-xl text-sm text-muted">
-            Ranked last among all 48 teams by points first, then goal
-            difference, then disciplinary record — the criteria for this
-            tournament&rsquo;s informal Wooden Spoon.
+            Ranked last among all 48 teams by points first and then goal
+            difference
           </p>
         </div>
 
@@ -84,13 +83,10 @@ export function WoodenSpoonHero({
           <StatBlock label="Points" value={String(points)} />
           <StatBlock
             label="Goal diff"
-            value={goalDifference > 0 ? `+${goalDifference}` : String(goalDifference)}
+            value={
+              goalDifference > 0 ? `+${goalDifference}` : String(goalDifference)
+            }
           />
-          <StatBlock
-            label="Cards"
-            value={`${yellowCards}🟨 ${redCards}🟥`}
-          />
-          <StatBlock label="Disc. pts" value={String(disciplinaryPoints)} />
         </div>
       </div>
     </section>

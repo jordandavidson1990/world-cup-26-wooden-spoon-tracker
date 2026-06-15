@@ -2,11 +2,14 @@
 
 import { useMemo, useState } from "react";
 import { useTournament } from "../context/TournamentContext";
-import { computeStats, countPlayedMatches, rankWorstToBest } from "../lib/standings";
+import {
+  computeStats,
+  countPlayedMatches,
+  rankWorstToBest,
+} from "../lib/standings";
 import { WoodenSpoonHero } from "../components/WoodenSpoonHero";
 import { StandingsTable } from "../components/StandingsTable";
 import { GroupTabs } from "../components/GroupTabs";
-import { MatchEditor } from "../components/MatchEditor";
 import { SyncPanel } from "../components/SyncPanel";
 
 export default function Home() {
@@ -38,10 +41,11 @@ export default function Home() {
         </h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
           A running tracker for the worst-placed team across all 48 nations,
-          ranked by points, then goal difference, then disciplinary record
-          (yellow and red cards).
+          ranked by points and then goal difference.
         </p>
       </header>
+
+      <SyncPanel />
 
       <WoodenSpoonHero
         worst={worst}
@@ -62,16 +66,10 @@ export default function Home() {
         />
 
         <p className="text-xs text-muted">
-          Sorted worst → best. Disciplinary points = 1 per yellow card + 4
-          per red card; a higher total is a worse record. Ties are broken in
-          this order: points, goal difference, goals scored, disciplinary
-          points, then team name.
+          Sorted worst → best. Ties are broken in this order: points, goal
+          difference, goals scored, and then team name.
         </p>
       </section>
-
-      <SyncPanel />
-
-      <MatchEditor />
 
       <footer className="border-t border-line pt-6 text-xs text-muted">
         Group draw confirmed at the FIFA final draw on 5 December 2025. Group

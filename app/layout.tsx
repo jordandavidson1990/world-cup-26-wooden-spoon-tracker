@@ -20,7 +20,7 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Wooden Spoon Watch — World Cup 2026",
   description:
-    "Tracking the worst-placed team at the 2026 FIFA World Cup, by points, goal difference and disciplinary record.",
+    "Tracking the worst-placed team at the 2026 FIFA World Cup, by points and goal difference.",
 };
 
 export default function RootLayout({

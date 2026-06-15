@@ -30,9 +30,6 @@ export function StandingsTable({
             <th className="px-3 py-3 font-medium text-right">GA</th>
             <th className="px-3 py-3 font-medium text-right">GD</th>
             <th className="px-3 py-3 font-medium text-right">Pts</th>
-            <th className="px-3 py-3 font-medium text-right">🟨</th>
-            <th className="px-3 py-3 font-medium text-right">🟥</th>
-            <th className="px-3 py-3 font-medium text-right">Disc</th>
           </tr>
         </thead>
         <tbody>
@@ -42,7 +39,11 @@ export function StandingsTable({
               <tr
                 key={s.team.id}
                 className={`border-b border-line/60 last:border-b-0 ${
-                  isWorst ? "bg-spoon/15" : idx % 2 === 1 ? "bg-white/[0.015]" : ""
+                  isWorst
+                    ? "bg-spoon/15"
+                    : idx % 2 === 1
+                    ? "bg-white/[0.015]"
+                    : ""
                 }`}
               >
                 <td className="px-4 py-2.5 tabular-nums text-muted">
@@ -65,20 +66,27 @@ export function StandingsTable({
                 {showGroupColumn && (
                   <td className="px-3 py-2.5 text-muted">{s.team.group}</td>
                 )}
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.played}</td>
+                <td className="px-3 py-2.5 text-right tabular-nums">
+                  {s.played}
+                </td>
                 <td className="px-3 py-2.5 text-right tabular-nums">{s.won}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.drawn}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.lost}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.goalsFor}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.goalsAgainst}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{gdLabel(s.goalDifference)}</td>
+                <td className="px-3 py-2.5 text-right tabular-nums">
+                  {s.drawn}
+                </td>
+                <td className="px-3 py-2.5 text-right tabular-nums">
+                  {s.lost}
+                </td>
+                <td className="px-3 py-2.5 text-right tabular-nums">
+                  {s.goalsFor}
+                </td>
+                <td className="px-3 py-2.5 text-right tabular-nums">
+                  {s.goalsAgainst}
+                </td>
+                <td className="px-3 py-2.5 text-right tabular-nums">
+                  {gdLabel(s.goalDifference)}
+                </td>
                 <td className="px-3 py-2.5 text-right font-display font-semibold tabular-nums">
                   {s.points}
-                </td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.yellowCards}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums">{s.redCards}</td>
-                <td className="px-3 py-2.5 text-right tabular-nums text-alert">
-                  {s.disciplinaryPoints}
                 </td>
               </tr>
             );

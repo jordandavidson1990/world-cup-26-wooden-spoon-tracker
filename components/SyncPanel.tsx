@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTournament } from "../context/TournamentContext";
 import { SyncResponse } from "../lib/types";
 
-const AUTO_REFRESH_MS = 5 * 60 * 1000; // 5 minutes - stays well under free-tier rate limits
+const AUTO_REFRESH_MS = 5 * 60 * 1000;
 
 export function SyncPanel() {
   const { applyResults } = useTournament();
@@ -13,7 +13,7 @@ export function SyncPanel() {
   >("idle");
   const [response, setResponse] = useState<SyncResponse | null>(null);
   const [lastSynced, setLastSynced] = useState<Date | null>(null);
-  const [autoRefresh, setAutoRefresh] = useState(false);
+  const [autoRefresh, setAutoRefresh] = useState(true);
 
   const sync = useCallback(async () => {
     setStatus("loading");

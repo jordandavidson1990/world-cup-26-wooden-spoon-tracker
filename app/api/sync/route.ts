@@ -68,8 +68,6 @@ export async function GET() {
       cache: "no-store",
     });
 
-    console.log("res:", res);
-
     if (!res.ok) {
       const text = await res.text();
       const body: SyncResponse = {
@@ -125,31 +123,6 @@ export async function GET() {
       homeName: home.name,
       awayName: away.name,
     };
-
-    // Card data is only present on football-data.org's paid tiers, but
-    // pick it up automatically if it's there.
-    if (m.bookings && m.bookings.length > 0) {
-      result.homeYellow = 0;
-      result.awayYellow = 0;
-      result.homeRed = 0;
-      result.awayRed = 0;
-
-      for (const booking of m.bookings) {
-        const bookingTeam = identifyTeam(booking.team);
-        const isHome = bookingTeam.id === home.id;
-        const isAway = bookingTeam.id === away.id;
-        if (!isHome && !isAway) continue;
-
-        if (booking.card === "YELLOW_CARD") {
-          if (isHome) result.homeYellow! += 1;
-          else result.awayYellow! += 1;
-        } else {
-          // YELLOW_RED_CARD or RED_CARD both count as a sending-off.
-          if (isHome) result.homeRed! += 1;
-          else result.awayRed! += 1;
-        }
-      }
-    }
 
     results.push(result);
   }

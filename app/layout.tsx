@@ -30,6 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className="bg-ink text-paper font-body antialiased min-h-screen">
         <Analytics />
         <TournamentProvider>{children}</TournamentProvider>

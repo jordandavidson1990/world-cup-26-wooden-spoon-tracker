@@ -31,11 +31,6 @@ export function WoodenSpoonHero({
         <h1 className="mt-3 font-display text-3xl sm:text-5xl font-semibold leading-tight">
           No results logged yet
         </h1>
-        <p className="mt-3 max-w-xl text-muted">
-          Enter scores and cards for the group-stage fixtures below to see which
-          of the 48 teams is currently sitting last — on points and goal
-          difference.
-        </p>
       </section>
     );
   }

@@ -65,10 +65,8 @@ export function SyncPanel() {
           </h2>
           <p className="mt-1 text-sm text-muted">
             Pulls finished and in-progress group-stage scores from{" "}
-            <span className="text-paper">football-data.org</span> and fills
-            them in automatically. Card data only comes through if your API
-            plan includes match bookings — otherwise enter cards manually
-            below.
+            <span className="text-paper">football-data.org</span> and fills them
+            in automatically.
           </p>
         </div>
 
@@ -106,8 +104,7 @@ export function SyncPanel() {
           <div className="space-y-1">
             <p className="text-pitch">
               Synced {response.results.length} match
-              {response.results.length === 1 ? "" : "es"} with a recorded
-              score
+              {response.results.length === 1 ? "" : "es"} with a recorded score
               {lastSynced &&
                 ` · last updated ${lastSynced.toLocaleTimeString()}`}
               .
